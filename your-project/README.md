@@ -1,10 +1,11 @@
+<img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100"/>
+
+
 # Snake Game :snake:
 
-Mini Proyecto de elaboracion de un video juego.
+Mini Proyecto de elaboración de un video juego.
 Seleccionamos el juego de la culebra donde hemos puesto a prueba los conocimientos que hemos adquirido utilizando Python
 
-Mini project of elaboration of a video game.
-We select the game of the snake where we have put to the test the knowledge we have acquired using Python
 
 # **Content** :scroll:
 
@@ -13,44 +14,30 @@ We select the game of the snake where we have put to the test the knowledge we h
 * [Workflow](#item3)
 
 
-
 ## Project Description
 
-Recreacion del famoso juego de la culebrita, utilizando el lenguaje de programacion Python.Este es primer mini proyecto realizado para el Bootcamp de Data Analytics de Ironhack.
-
-
-Recreation of the famous snake game, using the Python programming language. This is the first mini project made for Ironhack's Data Analytics Bootcamp.
+Recreación del famoso juego de la culebrita, utilizando el lenguaje de programación Python.Este es primer mini proyecto realizado para el Bootcamp de Data Analytics de Ironhack.
 
 
 ## Rules
 
 Las reglas son las siguientes:
-Para moverte dentro del juego utiliza las teclas de direccion de tu teclado.
-Apareceran las manzanas dentro del tablero, tu objetivo es comerlas.
-Por cada manzana que comas tu puntuacion aumentara 10 puntos y tambien crecera el cuerpo de la serpiente.
+
+Para moverte dentro del juego utiliza las teclas de dirección de tu teclado. 
+
+Aparecerán las manzanas dentro del tablero, tu objetivo es comerlas.
+
+Por cada manzana que comas tu puntuación aumentara 10 puntos y también crecerá el cuerpo de la serpiente.
+
 Recuerda, si chocas con las paredes  o con  una parte del cuerpo habras perdido.
-
-The rules are as follows:
-To move within the game use the arrow keys on your keyboard.
-The apples will appear on the board, your goal is to eat them.
-For every apple you eat your score will increase by 10 points and the body of the snake will also grow.
-Remember, if you hit the walls or a part of the body you will have lost.
-
 
 
 
 ## Workflow
 
-Durante la ejecucion de este proyecto se descompuso las acciones y eventos del juego en funciones para programarse utilizando el lengiaje de programacion Python.
+Durante la ejecución de este proyecto se descompuso las acciones y eventos del juego en funciones para programarse utilizando el lenguaje de programación Python.
 
 Se utilizaron modulos como:
-* Turtle
-* Time
-* Random
-
-During the execution of this project, the actions and events of the game were decomposed into functions to be programmed using the Python programming language.
-
-Modules were used such as:
 * Turtle
 * Time
 * Random
@@ -58,7 +45,7 @@ Modules were used such as:
 
 ## Trello
 
-Puedes revisar nuestra programacion en https://trello.com/invite/b/Vc6eoOTX/8bb1e032d37c06a455b17e4d5ec201c0/programacion-del-videojuego
+Puedes revisar nuestra programación en https://trello.com/invite/b/Vc6eoOTX/8bb1e032d37c06a455b17e4d5ec201c0/programacion-del-videojuego
 
 
 ## Authors :pencil:
