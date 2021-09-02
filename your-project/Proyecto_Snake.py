@@ -15,7 +15,7 @@ s = turtle.Screen()
 s.setup(550,550)
 s.bgcolor("black")
 s.tracer(0)
-s.title("Proyecto Juego en Python Snake")
+s.title("Mini Project Snake")
 
 
 #--------------Creacion de la cabeza--------------------
@@ -26,7 +26,7 @@ serpiente.shape("square")
 serpiente.penup()
 serpiente.goto(0,0)
 serpiente.direction = "stop"
-serpiente.color("white")
+serpiente.color("green")
 
 
 #--------------Creacion de comida --------------------
@@ -49,7 +49,7 @@ texto.color("white")
 texto.penup()
 texto.hideturtle()
 texto.goto(-130, 250)
-texto.write("Score: 0\t High Score : 0",align="center",font=("verdana", 10, "normal"))
+texto.write("Score: 0\tHigh Score : 0",align="center",font=("verdana", 10, "normal"))
 
 #--------------Funciones--------------------------------------------------------------------------
 
@@ -80,7 +80,8 @@ def movimiento():
         x = serpiente.xcor()
         serpiente.setx(x-20)
 
-#--------------Acciones delteclado------------------------------------------------------
+
+#--------------Acciones del teclado------------------------------------------------------
 
 s.listen()
 s.onkeypress(arriba, "Up")
@@ -96,7 +97,10 @@ while True:
 #---------------------Colisiones con los bordes------------------------------------------------------------------------------
 
     if serpiente.xcor() > 300 or serpiente.xcor() < -300 or serpiente.ycor() > 300 or serpiente.ycor() < -300:
-        time.sleep(retraso)
+        time.sleep(2)
+        serpiente.goto(0,0)
+        serpiente.direction = "stop"
+        
         for i in cuerpo:
             i.clear()
             i.hideturtle()
@@ -108,7 +112,7 @@ while True:
 
         score = 0
         texto.clear()
-        texto.write("Score:{}\tHigh Score:{}".format(score,high_score),align="center", font=("verdana", 10, "normal" ))
+        texto.write("Score:{} \tHigh Score:{}".format(score,high_score),align="center", font=("verdana", 10, "normal" ))
 
 #---------------------Colisiones con la comida------------------------------------------------------------------------------
 
@@ -119,16 +123,16 @@ while True:
 
         nuevo_cuerpo = turtle.Turtle()
         nuevo_cuerpo.shape("square")
-        nuevo_cuerpo.color("gray")
+        nuevo_cuerpo.color("green")
         nuevo_cuerpo.penup()
-        nuevo_cuerpo.goto(0,100)
+        nuevo_cuerpo.goto(0,0)
         nuevo_cuerpo.speed(0)
         cuerpo.append(nuevo_cuerpo)
 
 #---------------------Aumentar marcador ------------------------------------------------------------------------------
         score += 10
         if score > high_score:
-            high_score = score 
+            high_score = score  
             texto.clear()
             texto.write("Score:{}\tHigh_score:{}".format(score,high_score),align="center", font=("verdana", 10, "normal" )) 
 
