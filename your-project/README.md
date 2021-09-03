@@ -1,4 +1,4 @@
-<img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python Logo" width="100"/>
 
 
 # Snake Game :snake:
@@ -9,9 +9,9 @@ Seleccionamos el juego de la culebra donde hemos puesto a prueba los conocimient
 
 # **Content** :scroll:
 
-* [Project Description](#item1)
-* [Rules](#item2)
-* [Workflow](#item3)
+* [Project Description](#project-description)
+* [Rules](#rules)
+* [Workflow](#workflow)
 
 
 ## Project Description
@@ -23,7 +23,7 @@ Recreación del famoso juego de la culebrita, utilizando el lenguaje de programa
 
 Las reglas son las siguientes:
 
-Para moverte dentro del juego utiliza las teclas de dirección de tu teclado. 
+Para moverte dentro del juego utiliza las teclas de dirección de tu teclado ← , ↑ , →  , ↓
 
 Aparecerán las manzanas dentro del tablero, tu objetivo es comerlas.
 
@@ -42,6 +42,7 @@ Se utilizaron modulos como:
 * Time
 * Random
 
+![Diagrama de Flujo](Diagramadeflujo.jpg)
 
 ## Trello
 

@@ -12,7 +12,7 @@ high_score = 0
 #--------------Interfaz grafica --------------------
 
 s = turtle.Screen()
-s.setup(550,550)
+s.setup(600,600)
 s.bgcolor("black")
 s.tracer(0)
 s.title("Mini Project Snake")
@@ -26,14 +26,14 @@ serpiente.shape("square")
 serpiente.penup()
 serpiente.goto(0,0)
 serpiente.direction = "stop"
-serpiente.color("green")
+serpiente.color("SpringGreen4")
 
 
 #--------------Creacion de comida --------------------
 
 comida = turtle.Turtle()
 comida.shape("circle")
-comida.color("red")
+comida.color("red2")
 comida.penup()
 comida.goto(0,100)
 comida.speed(0)
@@ -114,6 +114,7 @@ while True:
         texto.clear()
         texto.write("Score:{} \tHigh Score:{}".format(score,high_score),align="center", font=("verdana", 10, "normal" ))
 
+
 #---------------------Colisiones con la comida------------------------------------------------------------------------------
 
     if serpiente.distance(comida) < 20:
@@ -123,7 +124,7 @@ while True:
 
         nuevo_cuerpo = turtle.Turtle()
         nuevo_cuerpo.shape("square")
-        nuevo_cuerpo.color("green")
+        nuevo_cuerpo.color("SpringGreen2")
         nuevo_cuerpo.penup()
         nuevo_cuerpo.goto(0,0)
         nuevo_cuerpo.speed(0)
@@ -134,7 +135,10 @@ while True:
         if score > high_score:
             high_score = score  
             texto.clear()
-            texto.write("Score:{}\tHigh_score:{}".format(score,high_score),align="center", font=("verdana", 10, "normal" )) 
+            texto.write("Score:{}\tHigh_score:{}".format(score,high_score),align="center", font=("verdana", 10, "normal" ))
+        else:
+            texto.clear()
+            texto.write("Score:{}\tHigh_score:{}".format(score,high_score),align="center", font=("verdana", 10, "normal" ))
 
 #--------------Movimiento del cuerpo de la serpiente------------------------------------------------------------------
 
