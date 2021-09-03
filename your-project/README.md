@@ -1,4 +1,4 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="python Logo" width="100"/>
+
 
 
 # Snake Game :snake:
