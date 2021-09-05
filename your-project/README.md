@@ -1,34 +1,56 @@
-<img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100"/>
 
-# Title of Your Project
-*[Your Name]*
 
-*[Your Cohort, Campus & Date]*
 
-## Content
-- [Project Description](#project-description)
-- [Rules](#rules)
-- [Workflow](#workflow)
-- [Organization](#organization)
-- [Links](#links)
+# Snake Game :snake:
+
+Mini Proyecto de elaboración de un video juego.
+Seleccionamos el juego de la culebra donde hemos puesto a prueba los conocimientos que hemos adquirido utilizando Python
+
+
+# **Content** :scroll:
+
+* [Project Description](#project-description)
+* [Rules](#rules)
+* [Workflow](#workflow)
+
 
 ## Project Description
-Write a short description of your project. Write 1-2 sentences about what what you chose to build and why. 
+
+Recreación del famoso juego de la culebrita, utilizando el lenguaje de programación Python.Este es primer mini proyecto realizado para el Bootcamp de Data Analytics de Ironhack.
+
 
 ## Rules
-Describe briefly the rules of the game you chose. 
+
+Las reglas son las siguientes:
+
+Para moverte dentro del juego utiliza las teclas de dirección de tu teclado ← , ↑ , →  , ↓
+
+Aparecerán las manzanas dentro del tablero, tu objetivo es comerlas.
+
+Por cada manzana que comas tu puntuación aumentara 10 puntos y también crecerá el cuerpo de la serpiente.
+
+Recuerda, si chocas con las paredes  o con  una parte del cuerpo habras perdido.
+
+
 
 ## Workflow
-Outline the workflow you used in your project. What are the steps you went through?
 
-## Organization
-How did you organize your work? Did you use any tools like a trello or kanban board?
+Durante la ejecución de este proyecto se descompuso las acciones y eventos del juego en funciones para programarse utilizando el lenguaje de programación Python.
 
-What does your repository look like? Explain your folder and file structure.
+Se utilizaron modulos como:
+* Turtle
+* Time
+* Random
 
-## Links
-Include links to your repository, slides and trello/kanban board. Feel free to include any other links associated with your project. 
+![Diagrama de Flujo](Diagramadeflujo.jpg)
 
-[Repository](https://github.com/)  
-[Slides](https://slides.com/)  
-[Trello](https://trello.com/en)  
+## Trello
+
+Puedes revisar nuestra programación en https://trello.com/invite/b/Vc6eoOTX/8bb1e032d37c06a455b17e4d5ec201c0/programacion-del-videojuego
+
+
+## Authors :pencil:
+
+- Odra Mathison
+- Benjamin Kenyery 
+
