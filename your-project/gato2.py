@@ -3,6 +3,8 @@ from os import system
 ## import time
 #from os import system
 
+hola = 'hola'
+
 turno = ["X", "0"]
 
 tablero = [
