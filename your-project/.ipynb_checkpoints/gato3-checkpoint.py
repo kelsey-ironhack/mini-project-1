@@ -14,6 +14,8 @@ tablero = [
 	[" ", " ", " "],
 ]
 
+lista_jugadas_guardadas = []
+
 def mostrar_tablero_cordenadas():
     tablero_ini = u'\u001b[38;5;84m' + '''Tablero con cordenadas validas:
 	["1,1", "1,2", "1,3"],
@@ -25,7 +27,7 @@ def mostrar_tablero_cordenadas():
 
 
 
-def mostrar_tablero():
+def mostrar_tablero(tablero):
     
     print("\n    1    2    3")
     f=0
@@ -82,14 +84,14 @@ def siguiente_turno(lista_jugadas):
         time.sleep(0.5) # Sleep for 3 seconds
         print(f"Turno {nombre_col(jugador4)}")
         time.sleep(0.5) # Sleep for 3 seconds
-        mostrar_tablero()
+        mostrar_tablero(tablero)
         print('\n')
         time.sleep(0.5) # Sleep for 3 seconds
         mostrar_tablero_cordenadas()
     else:
         siguiente_turno(lista_jugadas)
     if ha_ganado(jugador):
-        print (" {} ha ganado!!!".format(jugador3))
+        print ("1 {} ha ganado!!!".format(jugador3))
         imprimir_per()
         cpu=1
         #continuar_juego()
@@ -198,6 +200,23 @@ def mensaje_con_delay(mensaje, delay_mensaje=0.03, delay_post=0.01):
     return '\n'
 
 
+def continuar_juego():
+    #imprimir_log2()
+    continuar = input("\nDesea continuar \t")
+    continuar = continuar.lower()
+    if continuar == 'no':
+        #print ("Adios!!!")
+        return False
+    try:
+        if continuar == 'si':
+            #print('continuar') 
+            return True
+            
+        else: 
+            x=1/0
+    except:
+        print ("Respuesta no valida ")
+        return continuar_juego()
     
 def nombre_col(nombre):
     nombre = u'\u001b[38;5;209m' + nombre.upper() + u'\u001b[0m'
@@ -205,15 +224,15 @@ def nombre_col(nombre):
 
 #print(f'Hola {nombre_col(nombre)} de apellido {apellido}, como te va?') "\u001b[34m"
     
-def juego():
+def juego(tablero , lista_jugadas_guardadas):
     system("clear")
     imprimir_log()
     mostrar_tablero_cordenadas()
     print('\n')
     jugador2 = input('\n Ingresa nombre del jugador \t')
-    mostrar_tablero()
+    mostrar_tablero(tablero)
     lista_jugadas=[1,2,3,4,5,6,7,8,9]
-    lista_jugadas_guardadas = []
+    #lista_jugadas_guardadas = []
     x="X"
     jugador='X'
     cpu=0
@@ -221,9 +240,7 @@ def juego():
         posicion = input(f"\n{nombre_col(jugador2)}, elige una posicion (fila, columna) de 1 a 3.\nO 'salir' para salir \t")
         posicion = posicion.lower()
         if posicion == 'salir':
-            system("clear")
             print ("Adios!!!")
-            imprimir_log2()
             break
         try:
             posicion_l = procesar_posicion (posicion)			
@@ -233,15 +250,15 @@ def juego():
         if posicion_correcta(posicion_l):
             actualizar_tablero(posicion_l, jugador)
             time.sleep(.5)
-            mostrar_tablero()
-            time.sleep(2) # Sleep for 3 seconds
+            mostrar_tablero(tablero)
+            time.sleep(1.5) # Sleep for 3 seconds
             system("clear")
             print('\n')
             num= num_jugada(posicion_l)
             pre ,lista_jugadas = guardar_jugada(num,lista_jugadas)
             if len(lista_jugadas) ==0:
                 if ha_ganado(jugador):
-                    print (f" {nombre_col(jugador2)} ha ganado!!!")
+                    print (f"2 {nombre_col(jugador2)} ha ganado!!!")
                     imprimir_vic()
                     break
                 else: 
@@ -249,20 +266,28 @@ def juego():
                     imprimir_emp()
                     break
             if ha_ganado(jugador):
-                print (f" {nombre_col(jugador2)} ha ganado!!!")
+                print (f"3 {nombre_col(jugador2)} ha ganado!!!")
                 imprimir_vic()
-                #cpu = continuar_juego(cpu)
-                #if cpu==1:
-                #    break
+                if continuar_juego():
+                    lista_jugadas_guardadas = []
+                    tablero = [
+                    [" ", " ", " "],
+                    [" ", " ", " "],
+                    [" ", " ", " "],
+                    ]
+                    juego(tablero , lista_jugadas_guardadas)
+                    #print('cotinuar')
+                else :
+                    break
+                    #print('adios')
                 
-                break
+                #break
             cpu = siguiente_turno(lista_jugadas)
             if cpu==1:
-                #imprimir_log2()
                 break
             
             
         else:
             print (f"Posicion {posicion} no válida")
 	
-juego()
+juego(tablero , lista_jugadas_guardadas)

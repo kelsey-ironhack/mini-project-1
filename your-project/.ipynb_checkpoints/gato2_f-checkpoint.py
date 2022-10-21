@@ -76,10 +76,11 @@ def siguiente_turno(lista_jugadas):
         tabla = {1:(0,0) , 2:(0,1) , 3:(0,2), 4:(1,0) , 5:(1,1) , 6:(1,2), 7:(2,0), 8:(2,1) , 9:(2,2)}
         num = tabla.get(fila)
         num = list(num)
+        jugador4='CPU'
         posicion_l = num
         actualizar_tablero(posicion_l, '0')
         time.sleep(0.5) # Sleep for 3 seconds
-        print("Turno CPU")
+        print(f"Turno {nombre_col(jugador4)}")
         time.sleep(0.5) # Sleep for 3 seconds
         mostrar_tablero()
         print('\n')
@@ -88,7 +89,7 @@ def siguiente_turno(lista_jugadas):
     else:
         siguiente_turno(lista_jugadas)
     if ha_ganado(jugador):
-        print ("1 {} ha ganado!!!".format(jugador3))
+        print (" {} ha ganado!!!".format(jugador3))
         imprimir_per()
         cpu=1
         #continuar_juego()
@@ -127,7 +128,7 @@ def imprimir_log():
     return
 
 def imprimir_vic():
-    print(u'\u001b[35m' + '''
+    print(u'\u001b[34m' + '''
 _._     _,-'""`-._
 (,-.`._,'(       |\`-/|
     `-.-' \ )-`( , o o)
@@ -197,33 +198,13 @@ def mensaje_con_delay(mensaje, delay_mensaje=0.03, delay_post=0.01):
     return '\n'
 
 
-def continuar_juego(cpu, lista_jugadas_guardadas, tablero):
-    imprimir_log2()
-    continuar = input("\nDesea continuar \t")
-    continuar = continuar.lower()
-    if continuar == 'no':
-        print ("Adios!!!")
-        cpu=1
-        return cpu
-    try:
-        if continuar == 'si':
-            #print('continuar') 
-            cpu=0
-            tablero = [
-            [" ", " ", " "],
-            [" ", " ", " "],
-            [" ", " ", " "],
-            ]
-            lista_jugadas_guardadas = []
-            juego()
-            
-        else: 
-            x=1/0
-    except:
-        print ("Respuesta no valida ")
-        return continuar_juego()
     
+def nombre_col(nombre):
+    nombre = u'\u001b[38;5;209m' + nombre.upper() + u'\u001b[0m'
+    return nombre
 
+#print(f'Hola {nombre_col(nombre)} de apellido {apellido}, como te va?') "\u001b[34m"
+    
 def juego():
     system("clear")
     imprimir_log()
@@ -237,27 +218,30 @@ def juego():
     jugador='X'
     cpu=0
     while True:
-        posicion = input("\nTurno {}, elige una posicion (fila, columna) de 1 a 3. 'salir' para salir \t".format(jugador2))
+        posicion = input(f"\n{nombre_col(jugador2)}, elige una posicion (fila, columna) de 1 a 3.\nO 'salir' para salir \t")
         posicion = posicion.lower()
         if posicion == 'salir':
+            system("clear")
             print ("Adios!!!")
+            imprimir_log2()
             break
         try:
             posicion_l = procesar_posicion (posicion)			
         except:
-            print ("Error, posicion {} no es válida. ".format(posicion))
+            print (f"Error, posicion {posicion} no es válida. ")
             continue
         if posicion_correcta(posicion_l):
             actualizar_tablero(posicion_l, jugador)
+            time.sleep(.5)
             mostrar_tablero()
-            time.sleep(1) # Sleep for 3 seconds
+            time.sleep(2) # Sleep for 3 seconds
             system("clear")
             print('\n')
             num= num_jugada(posicion_l)
             pre ,lista_jugadas = guardar_jugada(num,lista_jugadas)
             if len(lista_jugadas) ==0:
                 if ha_ganado(jugador):
-                    print ("2 {} ha ganado!!!".format(jugador2))
+                    print (f" {nombre_col(jugador2)} ha ganado!!!")
                     imprimir_vic()
                     break
                 else: 
@@ -265,7 +249,7 @@ def juego():
                     imprimir_emp()
                     break
             if ha_ganado(jugador):
-                print ("3 {} ha ganado!!!".format(jugador2))
+                print (f" {nombre_col(jugador2)} ha ganado!!!")
                 imprimir_vic()
                 #cpu = continuar_juego(cpu)
                 #if cpu==1:
@@ -274,10 +258,11 @@ def juego():
                 break
             cpu = siguiente_turno(lista_jugadas)
             if cpu==1:
+                #imprimir_log2()
                 break
             
             
         else:
-            print ("Posicion {} no válida".format(posicion))
+            print (f"Posicion {posicion} no válida")
 	
 juego()
