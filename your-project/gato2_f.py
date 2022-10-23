@@ -114,7 +114,7 @@ def guardar_jugada(num,lista_jugadas):
         return(False,lista_jugadas)
     
 def imprimir_log():
-    print(u'\u001b[34m' + '''                                                         
+    print("\033[5;31;40m"+ '''                                                         
  (                  )             (                )      
  )\))(   (       ( /(   (   (     )\ )       )  ( /(      
 ((_)()\  )\  (   )\()) ))\  )(   (()/(    ( /(  )\()) (   
@@ -128,7 +128,7 @@ def imprimir_log():
     return
 
 def imprimir_vic():
-    print(u'\u001b[34m' + '''
+    print("\033[5;35;46m" + '''
 _._     _,-'""`-._
 (,-.`._,'(       |\`-/|
     `-.-' \ )-`( , o o)
@@ -145,7 +145,7 @@ _._     _,-'""`-._
     return
 
 def imprimir_per():
-    print(u'\u001b[36m' + '''\n      |\__/,|   
+    print("\033[5;31;43m"+ '''\n      |\__/,|   
 (`\
   _.|o o  |_   ) )
 -(((---(((--------
@@ -162,7 +162,7 @@ def imprimir_per():
     return
 
 def imprimir_emp():
-    print(u'\u001b[33m' + '''\n        |\      _,,,---,,_
+    print("\033[5;32;47m"+ '''\n        |\      _,,,---,,_
   ZZZzz /,`.-'`'    -.  ;-;;,_
        |,4-  ) )-,_. ,\ (  `'-'
        '---''(_/--'  `-'\_)                                         
@@ -179,11 +179,11 @@ def imprimir_emp():
     return
 
 def imprimir_log2():
-    print('''\n░░░▄▀▌░▄▀▌░░░░░░░░░░░░
+    print("\033[5;30;45m" + '''\n░░░▄▀▌░▄▀▌░░░░░░░░░░░░
 ░▄██▀▀▀█▀▀▀▄╔╦╗╔╗╔╗╗╗╗
 ▐███░▐░█░▐░█║║║╠╝║║║║║
 ███████╥████╝╝╝╚╝╚╝╩╩╝
-█████╚═╩═╝██░░░░░░░░░░''')
+█████╚═╩═╝██░░░░░░░░░░'''+ u'\u001b[33m')
     #input('Pulse enter para CONTINUAR.....')
     #system("clear")
     return
